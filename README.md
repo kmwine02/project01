@@ -21,7 +21,7 @@ TBD (Completed, duh)
 
 # Features #
 
-One of the defining features of our application is the ability to link a concert venue with a nearby local brewery.
+The defining features of our application is the ability to link a concert venue with a nearby local brewery.
 
 # Future Features #
 
