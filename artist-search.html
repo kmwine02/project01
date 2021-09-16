@@ -23,30 +23,27 @@
                     <div class="mb-3">
                         <label for="artist-search" class="form-label">Artist</label>
                         <input type="text" class="form-control" id="artist-search">
-                        <button type="button" class="btn btn-primary">Search</button>
+                        <button type="button" class="btn btn-primary" id="search">Search</button>
                       </div>
                 </div>
                 <div class="row" id="previous-search"></div>
             </div>
-            <div class="column col-8">
+            <div class="column col-8" id="artist-container">
                 <div class="card text-center">
-                    <div class="card-header" id="event-date">
-                      Date
-                    </div>
+                    <div class="card-header" id="event-date">Date</div>
                     <div class="card-body">
                       <h5 class="card-title" id="venue">Venue</h5>
                       <p class="card-text" id="location">City Name</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="#" class="btn btn-primary">Find a brewery</a>
                     </div>
                   </div> 
-
             </div>
         </div>
       </div>
  
     <footer class="card-footer text-center"></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/artist-script.js"></script>
     <script src="./assets/js/display-search.js"></script>
   </body>
 </html>
