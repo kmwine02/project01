@@ -19,16 +19,14 @@ function searchArtistApi(artist) {
 
         for (var i = 0; i < response.length; i++) {
           if (response[i].venue.country === "United States") {
-            var eventDate = response[i].datetime;
+            var eventDate = moment(response[i].datetime).format("MM/DD/YYYY");
             var venueName = response[i].venue.name;
             var location = response[i].venue.location;
 
-            console.log(eventDate);
-            console.log(venueName);
-            console.log(location);
+    
             
-            displayArtistCard(i);
-
+            var card = buildArtistCard(eventDate, venueName, location, i);
+            $("#artist-container").append(card);
           }
         }
       });
@@ -38,18 +36,21 @@ function searchArtistApi(artist) {
   });
 }
 
-function displayArtistCard(i) {
-  // add child div to artist-container with class card text-center (artist-card)
-  $("#artist-container").append("<div class='card text-center' id='card" + i + "'></div>");
+function buildArtistCard(eventDate, venueName, location, i) {
+ 
+var artistCard = $("<div class='card text-center' id='card" + i + "'></div>");
+var dateEl = $("<div class='card-header' id='event-date'>" + eventDate + "</div>");
+var cardBody = $("<div class='card-body'></div>");
+var venueEl = $("<h5 class='card-title' id='venue'>" + venueName + "</h5>");
+var locationEl = $("<p class='card-text' id='location'>" + location + "</p>");
+var buttonEl = $("<a href='#' class='btn btn-primary'>Find a brewery</a>");
 
-
-  // add child to artist-card with class card-header 
-  $("")
-  // add child to artist-card with class-card body (card-info)
-
-  // add child to card-info with class card-title
-  // add child to card-info with class card-text
-  // add child to card-info with class btn
+cardBody.append(venueEl);
+cardBody.append(locationEl);
+cardBody.append(buttonEl);
+artistCard.append(dateEl);
+artistCard.append(cardBody);
+return artistCard;
 
 }
 
@@ -57,15 +58,3 @@ function displayArtistCard(i) {
 
 // create function that displays all artists in local storage
 
-// create function to display the artist cards
-
-// <div class="column col-8" id="artist-container">
-//                 <div class="card text-center">
-//                     <div class="card-header" id="event-date">Date</div>
-//                     <div class="card-body" >
-//                       <h5 class="card-title" id="venue">Venue</h5>
-//                       <p class="card-text" id="location">City Name</p>
-//                       <a href="#" class="btn btn-primary">Find a brewery</a>
-//                     </div>
-//                   </div>
-//             </div>
