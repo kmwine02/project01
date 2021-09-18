@@ -1,6 +1,8 @@
 var apiKey = "1ab7d181a431c2dbd1e28e6c42a134da";
 var dateParam = "upcoming";
 var artist = "";
+var pastSearchButtonEl = document.querySelector("#past-search-buttons");
+
 
 $("#search").on("click", function () {
   artist = $(this).siblings("#artist-search").val();
@@ -22,6 +24,7 @@ function searchArtistApi(artist) {
     if (response.ok) {
       response.json().then(function (response) {
         console.log(response);
+        $("#artist-container").empty();
 
         for (var i = 0; i < response.length; i++) {
           if (response[i].venue.country === "United States") {
@@ -37,6 +40,8 @@ function searchArtistApi(artist) {
     } else {
       alert("Error calling api");
     }
+
+    pastSearch(artist);
   });
 }
 
@@ -92,3 +97,26 @@ function buildArtistCard(eventDate, venueName, location, city, i) {
   artistCard.append(cardBody);
   return artistCard;
 }
+
+var pastSearch = function (pastSearch) {
+
+  // console.log(pastSearch)
+
+  pastSearchEl = document.createElement("button");
+  pastSearchEl.textContent = pastSearch;
+  pastSearchEl.classList = "d-flex w-100 btn-light border p-2";
+  pastSearchEl.setAttribute("data-artist", pastSearch)
+  pastSearchEl.setAttribute("type", "submit");
+
+  pastSearchButtonEl.prepend(pastSearchEl);
+}
+
+var pastSearchHandler = function (event) {
+  var artist = event.target.getAttribute("data-artist")
+  if (artist) {
+      searchArtistApi(artist);
+      
+  }
+}
+
+pastSearchButtonEl.addEventListener('click', pastSearchHandler);
