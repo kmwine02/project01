@@ -7,6 +7,8 @@
 html,
 body {
     min-height: 100%;
+    background-attachment: fixed;
+    background-image: url("./../images/771497993.jpg");
 }
 
 body {
@@ -573,7 +575,7 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-    background-color: #2d3e50;
+    background-color: #001B2E;
 }
 
 .bg-info {
@@ -665,7 +667,7 @@ a:hover {
 }
 
 .btn.btn-primary {
-    background-color: #2d3e50;
+    background-color: #001B2E;
     color: #d9e9e8;
 }
 
@@ -743,7 +745,7 @@ a:hover {
 
 .card .card-header {
     padding: 0.375rem;
-    background-color: #2d3e50;
+    background-color: #001B2E;
     color: #d9e9e8;
 }
 
