@@ -47,7 +47,7 @@ function searchArtistApi(artist) {
                 }
             });
         } else {
-            alert("Enter an artist that is currently on");
+            alert("Enter an artist that is currently on tour!");
         }
 
     pastSearch(artist);
