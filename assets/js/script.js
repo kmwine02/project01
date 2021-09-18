@@ -73,7 +73,7 @@ function findBrewery(city) {
 }
 
 function buildArtistCard(eventDate, venueName, location, city, i) {
-  var artistCard = $("<div class='card text-center' id='card" + i + "'></div>");
+  var artistCard = $("<div class='p-3 mb-2 bg-dark text-white card text-center' id='card" + i + "'></div>");
   var dateEl = $(
     "<div class='card-header' id='event-date'>" + eventDate + "</div>"
   );
@@ -85,6 +85,7 @@ function buildArtistCard(eventDate, venueName, location, city, i) {
     findBrewery(city);
   });
 
+ 
   cardBody.append(venueEl);
   cardBody.append(locationEl);
   cardBody.append(buttonEl);
@@ -92,3 +93,10 @@ function buildArtistCard(eventDate, venueName, location, city, i) {
   artistCard.append(cardBody);
   return artistCard;
 }
+
+// var goBack = window.document.getElementById("goBackBtn");
+// goBack.on("click", "load", function() {
+//   // window.location.href = "artist-search.html";
+//   window.history.back();
+// });
+

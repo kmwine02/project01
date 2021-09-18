@@ -16,7 +16,7 @@ $(document).ready(function () {
   }
 
   function buildBreweryCard(brewery) {
-    var breweryCard = $("<div class='card text-center' id='card'></div>");
+    var breweryCard = $("<div class='p-3 mb-2 bg-dark text-white card text-center' id='card'></div>");
     var nameEl = $(
       "<div class='card-header' id='event-date'>" +
         brewery.name +
@@ -34,9 +34,10 @@ $(document).ready(function () {
     );
     var buttonEl = $(
       "<button class='btn btn-primary'><a href='" +
-        brewery.website_url +
+        brewery.site +
         "' target='_blank'>Visit the brewery's website</a></button>"
     );
+    console.log(brewery.website_url);
 
     cardBody.append(addressEl);
     cardBody.append(cityEl);
