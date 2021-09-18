@@ -1,6 +1,8 @@
 var apiKey = "1ab7d181a431c2dbd1e28e6c42a134da";
 var dateParam = "upcoming";
 var artist = "";
+var pastSearchButtonEl = document.querySelector("#past-search-buttons");
+
 
 $("#search").on("click", function () {
     artist = $(this).siblings("#artist-search").val();
@@ -18,10 +20,12 @@ function searchArtistApi(artist) {
         dateParam;
     console.log(apiUrl);
 
-    fetch(apiUrl).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (response) {
-                console.log(response);
+  fetch(apiUrl).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (response) {
+        console.log(response);
+        $("#artist-container").empty();
+
 
                 for (var i = 0; i < response.length; i++) {
                     if (response[i].venue.country === "United States") {
@@ -45,7 +49,11 @@ function searchArtistApi(artist) {
         } else {
             alert("Enter an artist that is currently on");
         }
-    });
+
+    pastSearch(artist);
+  });
+
+ 
 }
 
 function findBrewery(city) {
@@ -111,8 +119,26 @@ function buildArtistCard(eventDate, venueName, location, city, i) {
     return artistCard;
 }
 
-// var goBack = window.document.getElementById("goBackBtn");
-// goBack.on("click", "load", function() {
-//   // window.location.href = "artist-search.html";
-//   window.history.back();
-// });
+
+var pastSearch = function (pastSearch) {
+
+  // console.log(pastSearch)
+
+  pastSearchEl = document.createElement("button");
+  pastSearchEl.textContent = pastSearch;
+  pastSearchEl.classList = "d-flex w-100 btn-light border p-2";
+  pastSearchEl.setAttribute("data-artist", pastSearch)
+  pastSearchEl.setAttribute("type", "submit");
+
+  pastSearchButtonEl.prepend(pastSearchEl);
+}
+
+var pastSearchHandler = function (event) {
+  var artist = event.target.getAttribute("data-artist")
+  if (artist) {
+      searchArtistApi(artist);
+      
+  }
+}
+
+pastSearchButtonEl.addEventListener('click', pastSearchHandler);
