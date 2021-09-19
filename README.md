@@ -8,16 +8,23 @@ We created this application to help the user find an event featuring their favor
 
 # Build Status #
 
-TBD (Completed, duh)
+Deployed with a laundry list of great ideas for future development.
+
+You can find the project here: https://kmwine02.github.io/project01/
 
 # Screenshots #
 
-~ ~ coming soon ~ ~
+See below for an example of the artist search page results with local storage populating the recent searches underneath the submit button;
+
+![alt=SipNShow website displaying search results for Willie Nelson](images/artist-search-results.png)
+
+When the show is chosen, the user can click the "Find a Brewery" button and results will populate. See below;
+
+![alt=text brewery search results for Raleigh, NC](images/brewery-search-results.png)
 
 # Framework Used #
 
 - Bootstrap
-- jQuery
 
 # Features #
 
@@ -31,8 +38,8 @@ Here are some future features we would like to implement in order to greatly imp
 - search for artists by genre
 - create the ability to search for international venues and breweries
 - add logos and/or pictures of the brewery, artist and concert venue to the search results
-
-// Code Example? //
+- a "save trip" function when the user finds a combination of venue & brewery to attend
+- pagination for search results
 
 # API Reference #
 
