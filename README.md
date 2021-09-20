@@ -16,11 +16,11 @@ You can find the project here: https://kmwine02.github.io/project01/
 
 See below for an example of the artist search page results with local storage populating the recent searches underneath the submit button;
 
-![alt=SipNShow website displaying search results for Willie Nelson](images/artist-search-results.png)
+![alt=SipNShow website displaying search results for Willie Nelson](./assets/images/artist-search-results.png)
 
 When the show is chosen, the user can click the "Find a Brewery" button and results will populate. See below;
 
-![alt=text brewery search results for Raleigh, NC](images/brewery-search-results.png)
+![alt=text brewery search results for Raleigh, NC](./assets/images/brewery-search-results.png)
 
 # Framework Used #
 
